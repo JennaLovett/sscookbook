@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <div class="parallax">
+        <header id="showcase">
+            <h1>Welcome to Safe System's Cookbook</h1>
+            <section id="button-section">
+                <div class="button1">
+                    <a href="#vote" class="button">Vote on a Recipe</a>
+                </div>
+                <div class="button2">
+                    <a href="#submitrecipe" class="button">Submit a Recipe</a>
+                </div>
+                <div class="button3">
+                    <a href="#" class="button">List of Recipes</a>
+                </div>
+            </section>
+        </header>
+
+        <div id="vote">
+
+        </div>
+        
+        <div id="submitrecipe">
+            <h1>Submit a Recipe</h1>
+            <hr>
+            <form>
+                <!--<label>First Name</label> -->
+                <input type="text" name="firstname" placeholder="First Name" required><br>
+                <!--<label>Last Name</label> -->
+                <input type="text" name="lastname" placeholder="Last Name" required><br>
+                <!--<label>Recipe Category</label>-->
+                <select name="category" required>
+                    <option value="" disabled selected hidden>Recipe Category</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="appetizers">Appetizers</option>
+                    <option value="meats">Meats</option> 
+                    <option value="seafood">Seafood</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="sides">Sides</option>
+                    <option value="desserts">Desserts</option>
+                </select><br>
+                <!--<label>Recipe Title</label>-->
+                <input type="text" name="recipetitle" placeholder="Recipe Title" required><br>
+                <!--<label>Recipe Description</label><br>-->
+                <textarea name="description" maxlength="250" placeholder="Please provide a brief description of this recipe. Max of 250 characters allowed."></textarea><br>
+                <label>Recipe Upload (.pdf, .txt, .doc)</label>
+                <input type="file" name="image" accept=".doc, .pdf, .txt" required><br>
+                <input type="submit" value="Submit Recipe"> 
+            </form>
+            <hr id="bottomhr">
+        </div>
+    </div>
+</body>
+</html>

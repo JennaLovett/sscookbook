@@ -6,6 +6,7 @@
     <title>Welcome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="parallax">
@@ -13,13 +14,28 @@
             <h1>Welcome to Safe System's Cookbook</h1>
             <section id="button-section">
                 <div class="button1">
-                    <a href="#vote" class="button">Vote on a Recipe</a>
+                    <!--<a href="#vote" class="button">Vote on a Recipe</a>-->
+                    <button type="button" class="button" onclick="$(function() {
+                        $('html,body').animate({
+                            scrollTop: $('#vote').offset().top},
+                            'slow');
+                    });">Vote on a Recipe</button>
                 </div>
                 <div class="button2">
-                    <a href="#submitrecipe" class="button">Submit a Recipe</a>
+                    <!--<a href="#submitrecipe" class="button">Submit a Recipe</a>-->
+                    <button type="button" class="button" onclick="$(function() {
+                        $('html,body').animate({
+                            scrollTop: $('#submitrecipe').offset().top},
+                            'slow');
+                    });">Submit a Recipe</button>
                 </div>
                 <div class="button3">
-                    <a href="#" class="button">List of Recipes</a>
+                    <!--<a href="#" class="button">List of Recipes</a>-->
+                    <button type="button" class="button" onclick="$(function() {
+                        $('html,body').animate({
+                            scrollTop: $('#listofrecipes').offset().top},
+                            'slow');
+                    });">List of Recipes</button>
                 </div>
             </section>
         </header>
@@ -31,7 +47,7 @@
         <div id="submitrecipe">
             <h1>Submit a Recipe</h1>
             <hr>
-            <form>
+            <form method="POST" action="information.php" target="_blank">
                 <!--<label>First Name</label> -->
                 <input type="text" name="firstname" placeholder="First Name" required><br>
                 <!--<label>Last Name</label> -->
@@ -53,9 +69,20 @@
                 <textarea name="description" maxlength="250" placeholder="Please provide a brief description of this recipe. Max of 250 characters allowed."></textarea><br>
                 <label>Recipe Upload (.pdf, .txt, .doc)</label>
                 <input type="file" name="image" accept=".doc, .pdf, .txt" required><br>
-                <input type="submit" value="Submit Recipe"> 
+                <input type="submit" name="submit" value="Submit Recipe"> 
             </form>
             <hr id="bottomhr">
+        </div>
+
+        <div id="listofrecipes">
+            <select>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+            </select>
         </div>
     </div>
 </body>

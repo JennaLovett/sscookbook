@@ -39,6 +39,8 @@ body {
     background-color: #5c7db2;
     color: #ffffff;
     border: #555 1px solid;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
 }
 
 #button-section {

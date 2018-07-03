@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src = "script.js"></script>
 </head>
 <body>
     <header id="showcase">
@@ -74,14 +75,19 @@
     </div>
 
     <div id="listofrecipes">
-        <select>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-        </select>
+       <div id="arrow-left" class="arrow"></div>
+       <div id="page">
+            <h1 id="title"></h1><br>
+            <img id="foodpic">
+            <h2>Ingredients</h2><br>
+            <ul id="ingredients">
+            </ul><br>
+            <h2>Instructions</h2><br>
+            <ol id="instructions">
+            </ol><br>
+            <button onclick="writeTitle(); displayImage(); writeIngredients(); writeInstructions(); increaseCount();">Show Recipe</button>
+       </div>
+       <div id="arrow-right" class="arrow"></div>
     </div>
 
     <script>
@@ -97,12 +103,12 @@
         setTimeout(() => {
             document.querySelector('body').classList.remove('spinner-1');
             $(document).ready(function() {
-                $("#showcase").fadeIn(2500);
-                $('#vote').fadeIn(2500);
-                $('#submitrecipe').fadeIn(2500);
-                $('#listofrecipes').fadeIn(2500);
+                $("#showcase").fadeIn(1500);
+                $('#vote').fadeIn(1500);
+                $('#submitrecipe').fadeIn(1500);
+                $('#listofrecipes').fadeIn(1500);
             });
-        }, 2000);
+        }, 500);
     </script>
 </body>
 </html>

@@ -10,14 +10,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="export.js"></script>
+        <style>
+            select {
+                padding: 5px 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                width: 20%;
+            }
+        </style>
     </head>
     <body>
        <div class="container">
            <div class="table-responsive">
-               <h1 align="center">ASR Report</h1>
+               <h1 align="center" id="title">ASR Report</h1>
                <br>
                <div align="center">
-                <label for="mon">Month</label>
+                <label for="mon" id="monlabel">Month</label><br/>
                 <select class="mon" id="mon">
                     <option value=""></option>
                     <option value="January">January</option>
@@ -28,10 +37,14 @@
                     <option value="June">June</option>
                     <option value="July">July</option>
                     <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
                </div>
                <div align="center">
-                    <label for="year">Year</label>
+                    <label for="year" id="yearlabel">Year</label><br/>
                     <select class="year" id="year">
                         <option value=""></option>
                         <option value="2016">2016</option>
@@ -48,47 +61,18 @@
                <div id="asr_table">
 
                </div>
-               <div id="text">
-                   <p id="textp"></p>
+               <div id="submit" align="center">
+                    
+               </div> <br/>
+               <div id="write_to_csv" align="center">
+
                </div>
+               <br>
            </div>
        </div>
 
        <script>
-           var selected;
-           $(document).ready(function() {
-                $('select.mon').change(function(){
-                    selected = $('.mon option:selected').val();
-                });
-                $('select.year').change(function(){
-                    selected += $('.year option:selected').val();
-                });
-               $('#load_data').click(function() {
-                    $.ajax({
-                        url:"data.csv",
-                        dataType: "text",
-                        success: function(data) {
-                            var asr_data = data.split(/\r?\n|\r/);
-                            var table_data = '<table class="table table-bordered table-striped">';
-                            for(var count = 0; count < asr_data.length; count++) {
-                                var cell_data = asr_data[count].split(",");
-                                table_data += '<tr>';
-                                for(var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                                    if(count === 0) {
-                                        table_data += '<th>' + cell_data[cell_count] + '</th>';
-                                    } else {
-                                        table_data += '<td>' + cell_data[cell_count] + '</td>';
-                                    }
-                                }
-                                table_data += '</tr>';
-                            }
-                            table_data += '</table>';
-                            $('#asr_table').html(table_data);
-                        }
-                    });
-               });
-           });
-            
+
        </script>
     </body>
 </html>
